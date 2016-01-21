@@ -29,3 +29,17 @@
   (spacemacs/setup-startup-hook)
   (require 'server)
   (unless (server-running-p) (server-start)))
+
+
+;; my proxy
+
+
+(setq url-proxy-services
+      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+        ("http" . "127.0.0.1:8087")
+        ("https" . "127.0.0.1:8087")))
+
+;(setq url-http-proxy-basic-auth-storage
+;      (list (list "proxy.com:8080"
+;                  (cons "Input your LDAP UID !"
+;                        (base64-encode-string "LOGIN:PASSWORD")))))
